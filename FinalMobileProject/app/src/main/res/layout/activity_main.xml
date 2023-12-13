@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+    <TextView
+        android:id="@+id/decibelValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_margin="10dp"
+        android:text="Current level: 0 -dBA" />
+
+    <TextView
+        android:id="@+id/lAeqDecibel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/decibelValue"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="LAeq: 0 -dB"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/lMaxDecibel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lAeqDecibel"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Max level: 0 -dBA"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/loudDecibel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lMaxDecibel"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Loudness: "
+        android:textSize="14sp" />
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/decibel_lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/loudDecibel"
+        android:layout_marginTop="60dp" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_below="@id/decibel_lineChart" >
+
+        <ImageButton
+            android:id="@+id/startBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/play"
+            android:contentDescription="TODO" />
+
+        <ImageButton
+            android:id="@+id/stopBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pause"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+
+</RelativeLayout>
